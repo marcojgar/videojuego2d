@@ -1,0 +1,252 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #00189f, #0195ff);
+}
+
+header {
+    background: linear-gradient(135deg, #36007d, #01c0ff);
+}
+
+footer {
+    background: linear-gradient(135deg, #5e5e5e, #000000);
+    font-size: 0.9rem;
+}
+
+#responsiveContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45vh; /* Ocupa el 45% del alto de la pantalla */
+}
+
+/* Estilo para el contenedor principal */
+#mainContainer {
+    width: 70vw; /* El 70% del ancho de la pantalla */
+    height: 70vh; /* El 70% del alto de la pantalla */
+    max-width: 1200px; /* Máximo de 1200px para evitar que sea demasiado grande */
+    max-height: 700px; /* Máximo de 700px */
+    background: linear-gradient(435deg, #086300, #0eff01);
+    position: relative;
+    overflow: hidden;
+    cursor: url('assets/bomb.png'), auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para el contenedor de juego */
+#gameContainer {
+    width: 100%; /* Llenará el 100% del contenedor principal */
+    height: 100%; /* Llenará el 100% del contenedor principal */
+    background-image: url('assets/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animación de palpitación */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Aumenta ligeramente de tamaño */
+    }
+}
+
+/* Aplicar la animación al recuadro de instrucciones */
+#instructions {
+    animation: heartbeat 1.5s ease-in-out infinite; /* Palpitación continua */
+    max-width: 300px;
+    font-size: 1rem;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    color: #000;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#scoreBoard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 1.5vw; /* Tamaño adaptable al ancho de la pantalla */
+    color: #fff;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo translúcido */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+
+#scoreBoard span {
+    margin-left: 10px;
+    color: #00ff00;
+}
+
+/* Estilo para desenfoque */
+.blur-background {
+    filter: blur(5px);
+    transition: filter 0.5s ease; /* Transición suave */
+}
+
+/* Animación de desvanecimiento y deslizamiento */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Empieza desde abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Llega a su posición normal */
+    }
+}
+
+/* Aplicar la animación al texto debajo del título */
+.animated-description {
+    animation: fadeInUp 1.5s ease forwards;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #ffffffcc; /* Color ligeramente translúcido */
+}
+
+/* Botones de acción */
+button#backToHome {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    margin-top: 15px;
+    background-color: #00cc44;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button#backToHome:hover {
+    background-color: #00ff88;
+    transform: scale(1.05);
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button#startGame {
+    animation: pulse 1.5s infinite; /* Aplicar animación de pulso */
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    margin-top: 15px;
+    background-color: #00cc44;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button#startGame:hover {
+    background-color: #00ff88;
+    transform: scale(1.05);
+}
+
+/* Imagen del icono en el título */
+.title-icon {
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Animación de rebote para el icono */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animación de entrada para el título */
+h1 {
+    display: inline-block;
+    font-size: 2.5rem;
+    animation: fadeInSlideTitle 1.5s ease-out forwards;
+}
+
+/* Efecto de desvanecimiento y deslizamiento para el título */
+@keyframes fadeInSlideTitle {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animación de zoom */
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Clase para activar la animación */
+.animated-container {
+    animation: zoomInOut 0.5s ease;
+}
+
+.tank {
+    width: 10vw; /* Ajuste adaptable */
+    height: 10vw;
+    position: absolute;
+    background-image: url('assets/tank.png');
+    background-size: cover;
+}
+
+.explosion {
+    width: 12vw; /* Ajuste adaptable */
+    height: 12vw;
+    background-image: url('assets/explosion.png');
+    background-size: cover;
+    position: absolute;
+}
+
+.alert {
+    font-size: 1.2vw; /* Tamaño adaptable */
+}
+
+

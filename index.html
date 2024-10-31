@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW2 TANKS GAME</title>
+    <link rel="icon" href="assets/explosion.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-3">
+        <h1>
+            <img src="assets/title.png" alt="Icono Tanque" class="title-icon">
+            WW2 TANKS GAME</h1>
+        <p class="lead animated-description">¡Destruye todos los tanques antes de que desaparezcan de la pantalla y gana la batalla!</p>
+    </header>
+
+    <!-- Main Section -->
+    <main class="flex-fill d-flex align-items-center justify-content-center">
+        <div class="container-fluid text-center p-0" id="responsiveContainer">
+            <div id="instructions" class="alert alert-info">
+                <h4>Instrucciones</h4>
+                <p>Usa el cursor (simulando una bomba antitanque) para hacer clic en los tanques y destruirlos. Gana 1 punto por cada tanque eliminado.</p>
+                <p>¡Evita que los tanques escapen de tu pantalla!</p>
+            </div>
+
+            <div id="mainContainer" class="border border-primary rounded p-3 position-relative">
+                <div id="gameContainer" class="position-relative w-100 h-100">
+                    <div id="scoreBoard">Puntos: <span id="score">0</span></div></div>
+                <button id="startGame" class="btn btn-success mt-3">Iniciar Juego</button>
+                <button id="backToHome" class="btn btn-danger mt-3 d-none">Volver al Inicio</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <p>&copy; 2024 WW2 TANKS GAME Marco Julian Garcia Fernandez. Ivan Aguilar Perez. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
